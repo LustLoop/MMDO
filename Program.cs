@@ -6,7 +6,10 @@ namespace MMDO4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int a = -2;
+            int b = 2;
+
+            new MethodsRunner().run(a, b);
         }
     }
 }

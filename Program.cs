@@ -6,7 +6,7 @@ namespace MMDO4
     {
         static void Main(string[] args)
         {
-            int a = -2;
+            int a = 0;
             int b = 2;
 
             new MethodsRunner().run(a, b);

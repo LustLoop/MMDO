@@ -9,11 +9,11 @@ namespace MMDO4.methods
         {
             Function func = new Function();
             int Nk = 0; 
-            double gamma = eps / 3;
+            double delta = eps / 3;
 
             do {
-                double x1 = (a + b - gamma) / 2;
-                double x2 = (a + b + gamma) / 2;
+                double x1 = (a + b - delta) / 2;
+                double x2 = (a + b + delta) / 2;
 
                 double f1 = func.getResult(x1);
                 double f2 = func.getResult(x2);
@@ -32,7 +32,7 @@ namespace MMDO4.methods
             double x = (a + b) / 2;
             double f = func.getResult(x);
 
-            return "x* = " + x + ", f* = " + f + ", Nk = " + Nk + ", Nf* = " + func.Nf;
+            return "x* = " + x + ", f* = " + f + ", Nk = " + Nk + ", Nf* = " + func.Nf + " while eps = " + eps;
         }
     }
 }

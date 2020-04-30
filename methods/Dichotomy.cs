@@ -8,15 +8,22 @@ namespace MMDO4.methods
         public string calculate(double a, double b, double eps)
         {
             Function func = new Function();
+
+            double x1;
+            double x2;
+
+            double f1;
+            double f2;
+
             int Nk = 0; 
             double delta = eps / 3;
 
             do {
-                double x1 = (a + b - delta) / 2;
-                double x2 = (a + b + delta) / 2;
+                x1 = (a + b - delta) / 2;
+                x2 = (a + b + delta) / 2;
 
-                double f1 = func.getResult(x1);
-                double f2 = func.getResult(x2);
+                f1 = func.getResult(x1);
+                f2 = func.getResult(x2);
 
                 if (f1 <= f2) 
                 {

@@ -13,22 +13,28 @@ namespace MMDO4
             useMethod(new Dichotomy(), a, b, 0.00000001);
             Console.WriteLine();
 
-            // Console.WriteLine("GoldenRatio method:");         
-            // useMethod(new GoldenRatio(), a, b, 0.01);
-            // useMethod(new GoldenRatio(), a, b, 0.0001);
-            // useMethod(new GoldenRatio(), a, b, 0.00000001);
-            // Console.WriteLine();
+            Console.WriteLine("GoldenRatio method:");         
+            useMethod(new GoldenRatio(), a, b, 0.01);
+            useMethod(new GoldenRatio(), a, b, 0.0001);
+            useMethod(new GoldenRatio(), a, b, 0.00000001);
+            Console.WriteLine();
 
-            // Console.WriteLine("Fibonacci method:");
-            // useMethod(new Fibonacci(), a, b, 0.01);
-            // useMethod(new Fibonacci(), a, b, 0.0001);
-            // useMethod(new Fibonacci(), a, b, 0.00000001);
-            // Console.WriteLine();
+            Console.WriteLine("Fibonacci method:");
+            useMethod(new Fibonacci(), a, b, 0.01);
+            useMethod(new Fibonacci(), a, b, 0.0001);
+            useMethod(new Fibonacci(), a, b, 0.00000001);
+            Console.WriteLine();
 
             Console.WriteLine("Parabolas method:");
             useMethod(new Parabolas(), a, b, 0.01);
             useMethod(new Parabolas(), a, b, 0.0001);
             useMethod(new Parabolas(), a, b, 0.00000001);
+            Console.WriteLine();
+
+            Console.WriteLine("Localization method:");
+            useMethod(new Localization(), 0, 0.1, 0.01);
+            useMethod(new Localization(), 0, 0.1, 0.0001);
+            useMethod(new Localization(), 0, 0.1, 0.00000001);
             Console.WriteLine();
         }
 

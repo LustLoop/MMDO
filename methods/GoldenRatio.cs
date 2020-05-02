@@ -4,7 +4,7 @@ namespace MMDO4.methods
 {
     public class GoldenRatio : IMethod
     {
-        public string calculate(double a, double b, double eps)
+        public Data calculate(double a, double b, double eps)
         {
             Function func = new Function();
             int Nk = 0; 
@@ -33,7 +33,7 @@ namespace MMDO4.methods
                 }
                 if(u > v)
                 {
-                    u = a + (3 - Math.Sqrt(5)) / 2 * (b - a);
+                    u = a + (3 - Math.Sqrt(5)) / 2.0 * (b - a);
                     v = a + b - u;
                     fu = func.getResult(u);
                     fv = func.getResult(v);
@@ -41,10 +41,10 @@ namespace MMDO4.methods
                 Nk++;
             } while (!(b - a < eps));
 
-            double x = (a + b) / 2;
+            double x = (a + b) / 2.0;
             double f = func.getResult(x);
 
-            return "x* = " + x + ", f* = " + f + ", Nk = " + Nk + ", Nf* = " + func.Nf + " while eps = " + eps;
+            return new Data(x, f, Nk, func.Nf);
         }
     }
 }

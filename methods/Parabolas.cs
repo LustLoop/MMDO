@@ -1,17 +1,21 @@
 using System;
+using MMDO4.methods;
 
 namespace MMDO4.methods
 {
     public class Parabolas : IMethod
     {
-        public string calculate(double a, double b, double eps)
+        public Data calculate(double a, double b, double eps)
         {
             Function func = new Function();
             int Nk = 0;
             bool flag = false;
 
+            IMethod loc = new Localization();
+            Data data = loc.calculate(0, 0.1, 0.01);
+
             double x0 = a;
-            double x1 = (a + b) / 2;
+            double x1 = data.getNk();
             double x2 = b;
 
             double f0 = func.getResult(x0);
@@ -67,7 +71,7 @@ namespace MMDO4.methods
                 Nk++;
             }
 
-            return "x* = " + x + ", f* = " + f + ", Nk = " + Nk + ", Nf* = " + func.Nf + " while eps = " + eps;
+            return new Data(x, f, Nk, func.Nf);
         }     
     }
 }

@@ -4,7 +4,7 @@ namespace MMDO4.methods
 {
     public class Fibonacci : IMethod
     {
-        public string calculate(double a, double b, double eps)
+        public Data calculate(double a, double b, double eps)
         {
             Function func = new Function();
             int Nk = 0;
@@ -46,7 +46,7 @@ namespace MMDO4.methods
             double x = (a + b) / 2.0;
             double f = func.getResult(x);
 
-            return "x* = " + x + ", f* = " + f + ", Nk = " + Nk + ", Nf* = " + func.Nf + " while eps = " + eps;
+            return new Data(x, f, Nk, func.Nf);
         }
 
         private int findN(double a, double b, double eps)

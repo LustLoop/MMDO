@@ -5,7 +5,7 @@ namespace MMDO4.methods
 {
     class Dichotomy : IMethod
     {
-        public string calculate(double a, double b, double eps)
+        public Data calculate(double a, double b, double eps)
         {
             Function func = new Function();
 
@@ -39,7 +39,7 @@ namespace MMDO4.methods
             double x = (a + b) / 2;
             double f = func.getResult(x);
 
-            return "x* = " + x + ", f* = " + f + ", Nk = " + Nk + ", Nf* = " + func.Nf + " while eps = " + eps;
+            return new Data(x, f, Nk, func.Nf);
         }
     }
 }

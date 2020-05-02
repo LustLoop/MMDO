@@ -4,7 +4,7 @@ namespace MMDO4.methods
 {
     public class Localization : IMethod
     {
-        public string calculate(double x0, double h, double eps)
+        public Data calculate(double x0, double h, double eps)
         {
             Function func = new Function();
 
@@ -51,16 +51,16 @@ namespace MMDO4.methods
                     a = x2;
                     b = x1 - h;
                 }
-                return "a = " + Math.Round(a, 4) + ", b = " + Math.Round(b, 4);
+
+                return calculate(a, h, eps);
             }
             else
             {
                 x = x0;
                 f = func.getResult(x);
 
-                return "x = " + x + ", f = " + f;
+                return new Data(a, b, x, 0);
             }
-            
         }
     }
 }
